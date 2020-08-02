@@ -34,10 +34,10 @@ export const {
 export default repoDetails.reducer
 
 export const fetchIssuesCount = (org: string, repo: string): AppThunk => async dispatch => {
-  try {
-    const repoDetails = await getRepoDetails(org, repo)
-    dispatch(getRepoDetailsSuccess(repoDetails))
-  } catch (err) {
-    dispatch(getRepoDetailsFailed(err.toString()))
-  }
+  getRepoDetails(org, repo).then(
+    // success callback
+    repoDetails => dispatch(getRepoDetailsSuccess(repoDetails)),
+    // error callback
+    err => dispatch(getRepoDetailsFailed(err.toString()))
+  )
 }

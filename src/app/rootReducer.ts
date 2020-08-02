@@ -4,7 +4,7 @@ import repoSearchReducer from '../features/repoSearch/repoDetailsSlice'
 
 const rootReducer = combineReducers({
   issuesDisplay: issuesDisplayReducer,
-  repoSearch: repoSearchReducer,
+  repoDetails: repoSearchReducer,
 })
 
 export type RootState = ReturnType<typeof rootReducer>
