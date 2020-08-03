@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from './rootReducer'
 import {
@@ -11,18 +11,6 @@ import { IssuesListPage } from 'features/issuesList/IssuesListPage'
 import { IssueDetailsPage } from 'features/issueDetails/IssueDetailsPage'
 
 import './App.css'
-
-const ORG = 'rails'
-const REPO = 'rails'
-
-type CurrentDisplay =
-  | {
-      type: 'issues'
-    }
-  | {
-      type: 'comments'
-      issueId: number
-    }
 
 const App: React.FC = () => {
   const dispatch = useDispatch()
